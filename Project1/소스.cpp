@@ -5,21 +5,20 @@ using namespace std;
 int main() {
 	int a;
 	int count = 1, tmp = 1;
-	int layer[2] = { 1, }, wp[2] = { 0, };
+	int layer[2] = { 1, }, wp = 0;
 
 	cin >> a;
 
 	for (int i = 0; i < a; i++) {
-		if (count == wp[0]) {
+		if (count == wp) {
 			count += 1;
-			wp[0] = 0;
+			wp = 0;
 			layer[0] += 1;
 		}
-		wp[0]+=1;
+		wp+=1;
 	}
-	wp[1] = wp[0];
 	layer[1] = layer[0]; 
-	for (int i = 1; i < wp[0]; i++) {
+	for (int i = 1; i < wp; i++) {
 		layer[1] -= 1;
 		tmp += 1;
 	}
